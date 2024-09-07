@@ -1,9 +1,9 @@
 import Typrography from '@mui/material/Typography';
 
-import { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from 'react';
+import type { HighlightsProps } from './types';
 
 import { useStyles } from './styles';
-import { HighlightsProps } from './types';
 
 export default function Highlights({
   variant,

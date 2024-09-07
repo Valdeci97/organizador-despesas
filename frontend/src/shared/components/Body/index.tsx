@@ -1,8 +1,9 @@
 import Typography from '@mui/material/Typography';
 
+import type { PropsWithChildren } from 'react';
+import type { BodyProps } from './types';
+
 import { useStyles } from './styles';
-import { BodyProps } from './types';
-import { PropsWithChildren } from 'react';
 
 export default function Body({ variant, children }: PropsWithChildren<BodyProps>) {
   const style = useStyles();
