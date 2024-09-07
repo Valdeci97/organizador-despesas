@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './App.tsx';
+import { GlobalContextProvider } from './shared';
 import { Providers } from './providers';
 
 function startApp() {
@@ -11,9 +12,11 @@ function startApp() {
 
   return createRoot(rootElement).render(
     <StrictMode>
-      <Providers>
-        <App />
-      </Providers>
+      <GlobalContextProvider>
+        <Providers>
+          <App />
+        </Providers>
+      </GlobalContextProvider>
     </StrictMode>,
   );
 }
