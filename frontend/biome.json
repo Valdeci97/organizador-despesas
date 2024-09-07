@@ -1,8 +1,5 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -25,7 +22,8 @@
       "bracketSameLine": true,
       "bracketSpacing": true,
       "jsxQuoteStyle": "single",
-      "quoteProperties": "asNeeded"
+      "quoteProperties": "asNeeded",
+      "attributePosition": "auto"
     }
   }
 }
