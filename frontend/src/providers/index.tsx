@@ -1,12 +1,22 @@
-import { ReactNode } from 'react';
+import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+import type { ReactNode } from 'react';
 
-import { theme } from '../theme';
+import { useGlobalContext } from '../shared';
+import { createAppTheme } from '../theme';
 
 type ProviderProps = {
   readonly children: ReactNode;
 };
 
 export function Providers({ children }: ProviderProps) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  const { theme } = useGlobalContext();
+  const appTheme = createAppTheme(theme);
+
+  return (
+    <ThemeProvider theme={appTheme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  );
 }
