@@ -1,3 +1,13 @@
-import { createTheme } from '@mui/material/styles';
+import type { ThemeModeOptions } from '../shared';
 
-export const theme = createTheme({});
+import { darkModeTheme } from './dark-mode';
+import { lightModeTheme } from './light-mode';
+
+function isDarkMode(mode: ThemeModeOptions) {
+  return mode === 'dark';
+}
+
+export const createAppTheme = (mode: ThemeModeOptions) => {
+  if (isDarkMode(mode)) return darkModeTheme;
+  return lightModeTheme;
+};
